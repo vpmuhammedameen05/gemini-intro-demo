@@ -1,40 +1,86 @@
+body {
+  background-color: #f0f8ff; /* AliceBlue */
+}
+
 .calculator {
-  width: 300px;
+  width: 320px;
   margin: 50px auto;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #4682b4; /* SteelBlue */
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #e6e6fa; /* Lavender */
 }
 
 .display {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .display input {
   width: 100%;
-  padding: 10px;
-  font-size: 24px;
+  padding: 15px;
+  font-size: 28px;
   text-align: right;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #b0c4de; /* LightSteelBlue */
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
 }
 
 .keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 10px;
 }
 
 .keys button {
-  padding: 15px;
-  font-size: 18px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: #f0f0f0;
+  background-color: #add8e6; /* LightBlue */
+  color: #000;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .keys button:hover {
-  background-color: #e0e0e0;
+  background-color: #87ceeb; /* SkyBlue */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.keys button:active {
+  background-color: #4682b4; /* SteelBlue */
+  color: #fff;
+}
+
+/* Special buttons */
+.keys button[onclick*="clearResult"],
+.keys button[onclick*="deleteLast"] {
+  background-color: #ff6347; /* Tomato */
+  color: #fff;
+}
+
+.keys button[onclick*="clearResult"]:hover,
+.keys button[onclick*="deleteLast"]:hover {
+  background-color: #e5533d;
+}
+
+.keys button[onclick*="appendOperator"] {
+  background-color: #ffa07a; /* LightSalmon */
+  color: #fff;
+}
+
+.keys button[onclick*="appendOperator"]:hover {
+  background-color: #e9967a;
+}
+
+.keys button[onclick*="calculateResult"] {
+  background-color: #32cd32; /* LimeGreen */
+  color: #fff;
+  grid-column: span 2;
+}
+
+.keys button[onclick*="calculateResult"]:hover {
+  background-color: #2dbb2d;
 }
